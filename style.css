@@ -417,10 +417,6 @@ h1, p {
     margin: 2rem 0;
 }
 
-h1 {
-    margin-top: 0;
-}
-
 p:last-of-type {
     margin-bottom: 0;
 }
@@ -487,10 +483,12 @@ main {
         padding: 4rem;
         overflow-x: auto;
     }
-
+    h1 {
+        margin-top: 0;
+    }
 }
 
-@media (max-width: 1024px) and (prefers-color-scheme: dark) {
+@media (max-width: 1023px) and (prefers-color-scheme: dark) {
  body {
      --background-color: var(--gray-1);
  }
