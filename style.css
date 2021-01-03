@@ -3,13 +3,16 @@
     --gray-1: #333;
     --gray-2: #4F4F4F;
     --gray-3: #828282;
+    --gray-4: #BDBDBD;
+    --gray-5: #E0E0E0;
     --gray-6: #F2F2F2;
     --white: #FFF;
-    --font-size-xs: 1rem;
-    --font-size-sm: 1.25rem;
-    --font-size-md: 1.5rem;
-    --font-size-base: 1.75rem;
-    --font-size-lg: 2rem;
+    --font-size-xs: 1.25rem;
+    --font-size-sm: 1.5rem;
+    --font-size-md: 1.75rem;
+    --font-size-base: 2rem;
+    --font-size-lg: 2.5rem;
+    --font-size-xl: 2.75rem;
     --font-size-xl: 2.5rem;
     --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --text-color: var(--gray-1);
@@ -19,6 +22,7 @@
     --logo-container-background: var(--gray-6);
     --padding: 1.5rem;
     --link-button-background: var(--gray-6);
+    --link-underline-color: var(--gray-4);
 }
 
 /* Paul Irish * { Box-sizing: Border-box } FTW - https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
@@ -438,12 +442,16 @@ h1, h2, h3, h4, p, .home .link-button {
     padding: 0;
 }
 
-.resume section, .resume .logo-container {
+.resume section, .resume .flex-logo {
     margin-top: 4rem;
 }
 
+.resume .logo-container {
+    margin-right: 2rem;
+}
+
 .resume h1 {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-xl);
     line-height: 1.5;
 }
 .resume h2 { 
@@ -460,8 +468,12 @@ h1, h2, h3, h4, p, .home .link-button {
     line-height: 1.5;
 }
 
-.resume small + h3 {
-    margin-top: 3rem;
+.resume p + h3 {
+    margin-top: 3.5rem;
+}
+
+.resume h4 {
+    margin-bottom: 1rem;
 }
 
 .resume h4 { 
@@ -486,7 +498,12 @@ h1, h2, h3, h4, p, .home .link-button {
 }
 
 a, a:visited { 
-    color: var(--text-color);
+    color: var(--text-color);    
+    text-decoration: none;
+    background-image: linear-gradient(to bottom, var(--link-underline-color) 33%, transparent 33%, transparent);
+    background-position: 0 1.03em;
+    background-repeat: repeat-x;
+    background-size: 1px 12px;
 }
 
 a:hover {
@@ -494,8 +511,18 @@ a:hover {
 }
 
 .logo-container__logo {
-    height: 7rem;
-    width: 7rem;
+    height: 5rem;
+    width: 5rem;
+}
+
+.flex-logo {
+    display: flex;
+    align-items: center;
+}
+
+.flex-logo h1, .flex-logo p {
+    margin: 0;
+    line-height: 1.3;
 }
 
 .link-button {
@@ -503,6 +530,14 @@ a:hover {
     padding: 1em;
     border-radius: 9999px;
     display: inline-block;
+    font-size: var(--font-size-xs);
+}
+
+.link-button__underline {
+    background-image: linear-gradient(to bottom, var(--link-underline-color) 33%, transparent 33%, transparent);
+    background-position: 0 1.03em;
+    background-repeat: repeat-x;
+    background-size: 1px 10px;
 }
 
 .resume {
@@ -513,25 +548,29 @@ a:hover {
 @media (prefers-color-scheme: dark) {
     :root {
         --background-color: var(--gray-2);
-        --text-color: var(--gray-6);
+        --text-color: var(--gray-5);
         --text-light: var(--gray-3);
         --logo-container-background: var(--gray-1);
         --text-hover-color: var(--white);
+        --link-underline-color: var(--gray-3);
     }
     .logo-container__logo {
         color: var(--gray-3);
     }
+    .resume {
+        --background-color: var(--gray-1);
+        --link-button-background: var(--gray-2);
+    }
+
+    .home {
+        --link-button-background: var(--gray-3);
+    }
+    .home .link-button {
+        --link-underline-color: var(--gray-4);
+    }
 }
 
 @media (min-width: 1024px) {
-    :root {
-        --font-size-xs: 1.25rem;
-        --font-size-sm: 1.5rem;
-        --font-size-md: 1.75rem;
-        --font-size-base: 2rem;
-        --font-size-lg: 2.5rem;
-        --font-size-xl: 2.75rem;
-    }
     .home {
         padding: 0;
     }
@@ -561,18 +600,16 @@ a:hover {
     }
 }
 
-@media (prefers-color-scheme: dark) {
- .resume {
-    --background-color: var(--gray-1);
-    --link-button-background: var(--gray-2);
- }
- .home {
-    --link-button-background: var(--gray-3);
- }
-}
 @media (max-width: 1023px) and (prefers-color-scheme: dark) {
- .home {
-    --background-color: var(--gray-1);
-    --link-button-background: var(--gray-2);
- }
+    .home {
+        --background-color: var(--gray-1);
+        --link-button-background: var(--gray-2);
+    }
+}
+
+@media (max-width: 1023px) {
+    .home {
+        max-width: 80ch;
+        margin: 0 auto;
+    }
 }
