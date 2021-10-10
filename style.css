@@ -498,12 +498,13 @@ h1, h2, h3, h4, p, .home .link-button {
 }
 
 a, a:visited { 
-    color: var(--text-color);    
+    color: var(--text-color);  
+    text-decoration: underline;
     text-decoration-color: var(--link-underline-color);
-    text-decoration-skip: none;
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: .15em;
-    text-underline-offset: -.15em;
+    /* text-decoration-skip: none;
+    text-decoration-skip-ink: none; */
+    text-decoration-thickness: .1em;
+    text-underline-offset: .1em;
 }
 
 a:hover {
