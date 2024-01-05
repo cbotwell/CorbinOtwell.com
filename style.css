@@ -157,12 +157,15 @@ a:hover {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: var(--gray-7);
-        --text-color: var(--gray-2);
-        --text-light: var(--gray-6);
-        --logo-container-background: var(--gray-8);
+        --background-color: var(--gray-8);
+        --text-color: var(--gray-0);
+        --text-light: var(--gray-4);
+        --logo-container-background: var(--gray-9);
         --text-hover-color: white;
         --link-underline-color: var(--gray-6);
+    }
+    .home {
+        --link-button-background: var(--gray-7);
     }
     .logo-container__logo {
         color: var(--gray-6);
@@ -170,13 +173,6 @@ a:hover {
     .resume {
         --background-color: var(--gray-8);
         --link-button-background: var(--gray-7);
-    }
-
-    .home {
-        --link-button-background: var(--gray-1);
-    }
-    .home .link-button {
-        --link-underline-color: var(--gray-4);
     }
 }
 
