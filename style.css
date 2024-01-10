@@ -11,6 +11,9 @@
     --padding: var(--size-5);
     --link-button-background: var(--gray-1);
     --link-underline-color: var(--gray-5);
+    --focus-outline-color: var(--gray-9);
+    --focus-outline-width: .2rem;
+    --focus-outline-offset: .2em;
 }
 
 /* Paul Irish * { Box-sizing: Border-box } FTW - https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
@@ -33,7 +36,7 @@ body {
     padding: var(--padding);
 }
 
-h1, h2, h3, h4, p, .home .link-button {
+h1, h2, h3, h4, p, .home .link-button, .work__details {
     margin: var(--size-7) 0;
 }
 
@@ -55,14 +58,14 @@ h1, h2, h3, h4, p, .home .link-button {
 }
 
 .resume .logo-container {
-    margin-right: var(--size-7);
+    margin-right: var(--size-3);
 }
 
 .resume h1 {
-    font-size: var(--font-size-6);
+    font-size: var(--font-size-5);
     line-height: var(--font-lineheight-3);
 }
-.resume h2 { 
+.resume__section-heading { 
     font-size: var(--font-size-3);
     line-height: var(--font-lineheight-3);
     font-weight: normal;
@@ -71,23 +74,34 @@ h1, h2, h3, h4, p, .home .link-button {
     color: var(--text-light);
 }
 
-.resume h3 { 
+.work__employer { 
     font-size: var(--font-size-5);
     line-height: var(--font-lineheight-3);
-}
-
-.resume p + h3 {
     margin-top: var(--size-8);
 }
 
-.resume h4 {
-    margin-bottom: var(--size-3);
+.work__details {
+    display: flex;
+    gap: var(--font-size-3);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: var(--size-8);
 }
 
-.resume h4 { 
+.work__title { 
+    margin: 0;
     font-size: var(--font-size-4);
     line-height: var(--font-lineheight-3);
     font-weight: bold;
+}
+
+.work__duration {
+    font-size: var(--font-size-3);
+    line-height: var(--font-lineheight-3);
+    font-weight: normal;
+    color: var(--text-light);
+ 
 }
 
 .resume p {
@@ -95,14 +109,6 @@ h1, h2, h3, h4, p, .home .link-button {
     line-height: var(--font-lineheight-3);
     font-weight: normal;
     max-width: 80ch;
-}
-
-.resume small {
-    font-size: var(--font-size-3);
-    line-height: var(--font-lineheight-3);
-    font-weight: normal;
-    color: var(--text-light);
- 
 }
 
 a, a:visited { 
@@ -117,9 +123,14 @@ a:hover {
     color: var(--text-hover-color);
 }
 
+a:focus-visible {
+    outline-offset: var(--focus-outline-offset);
+    outline: var(--focus-outline-width) dashed var(--focus-outline-color);
+}
+
 .logo-container__logo {
-    height: var(--size-10);
-    width: var(--size-10);
+    height: var(--size-8);
+    width: var(--size-8);
 }
 
 .flex-logo {
@@ -151,7 +162,7 @@ a:hover {
 }
 
 .resume {
-    max-width: 80ch;
+    max-width: 70ch;
     margin: 0 auto;
 }
 
@@ -163,6 +174,7 @@ a:hover {
         --logo-container-background: var(--gray-9);
         --text-hover-color: white;
         --link-underline-color: var(--gray-6);
+        --focus-outline-color: var(--gray-0);
     }
     .home {
         --link-button-background: var(--gray-7);
