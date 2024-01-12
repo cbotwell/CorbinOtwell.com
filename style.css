@@ -381,6 +381,16 @@ a:focus-visible {
     margin: 0 auto;
 }
 
+.work__employer {
+    background-color: var(--logo-container-background);
+    min-height: 20vh;
+    display: grid;
+    place-items: center;
+    border-radius: var(--radius-3);
+    padding: var(--size-5);
+    text-align: center;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --background-color: var(--gray-8);
@@ -390,16 +400,10 @@ a:focus-visible {
         --text-hover-color: white;
         --link-underline-color: var(--gray-6);
         --focus-outline-color: var(--gray-0);
-    }
-    .home {
         --link-button-background: var(--gray-7);
     }
     .logo-container__logo {
         color: var(--gray-6);
-    }
-    .resume {
-        --background-color: var(--gray-8);
-        --link-button-background: var(--gray-7);
     }
 }
 
@@ -434,10 +438,9 @@ a:focus-visible {
 }
 
 @media (max-width: 1023px) and (prefers-color-scheme: dark) {
-    .home {
+    /* .home {
         --background-color: var(--gray-8);
-        --link-button-background: var(--gray-7);
-    }
+    } */
 }
 
 @media (max-width: 1023px) {
