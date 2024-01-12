@@ -27,6 +27,220 @@ html {
     box-sizing: inherit;
 }
 
+/* Flex Utilities */
+
+.flex {
+    display: flex;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-col-reverse {
+    flex-direction: column-reverse;
+}
+
+.flex-no-wrap {
+    flex-wrap: nowrap;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+.justify-content-space-around {
+    justify-content: space-around;
+}
+
+.justify-content-space-evenly {
+    justify-content: space-evenly;
+}
+
+.align-content-center {
+    align-content: center;
+}
+
+.align-content-start {
+    align-content: flex-start;
+}
+
+.align-content-end {
+    align-content: flex-end;
+}
+
+.align-content-space-between {
+    align-content: space-between;
+}
+
+.align-content-space-around {
+    align-content: space-around;
+}
+
+.align-content-space-evenly {
+    align-content: space-evenly;
+}
+
+.align-content-stretch {
+    align-content: stretch;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.align-items-stretch {
+    align-items: stretch;
+}
+
+.align-items-baseline {
+    align-items: baseline;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+.align-self-start {
+    align-self: flex-start;
+}
+
+.align-self-end {
+    align-self: flex-end;
+}
+
+.align-self-stretch {
+    align-self: stretch;
+}
+
+.align-self-baseline {
+    align-self: baseline;
+}
+
+.flex-initial {
+    flex: 0 1 auto;
+}
+
+.flex-1 {
+    flex: 1 1 0%;
+}
+
+.flex-no-shrink-auto {
+    flex: 1 0 auto;
+}
+
+.flex-auto {
+    flex: 1 1 auto;
+}
+
+.flex-none {
+    flex: none;
+}
+
+.order-first {
+    order: -9999;
+}
+
+.order-last {
+    order: 9999;
+}
+
+/* Gap Utilities */
+
+.gap-1 { 
+    gap: var(--size-1); 
+}
+.gap-2 { 
+    gap: var(--size-2); 
+}
+.gap-3 { 
+    gap: var(--size-3); 
+}
+.gap-4 { 
+    gap: var(--size-4); 
+}
+.gap-5 { 
+    gap: var(--size-5); 
+}
+.gap-6 { 
+    gap: var(--size-6); 
+}
+.gap-7 { 
+    gap: var(--size-7); 
+}
+.gap-8 { 
+    gap: var(--size-8); 
+}
+.gap-9 { 
+    gap: var(--size-9); 
+}
+.gap-10 { 
+    gap: var(--size-10); 
+}
+.gap-11 { 
+    gap: var(--size-11); 
+}
+.gap-12 { 
+    gap: var(--size-12); 
+}
+.gap-13 { 
+    gap: var(--size-13); 
+}
+.gap-14 { 
+    gap: var(--size-14); 
+}
+.gap-15 { 
+    gap: var(--size-15); 
+}
+
+/* Stack Component */
+
+.stack {
+    display: grid;
+}
+
+.stack > * {
+    margin-top: 0;
+    margin-bottom: 0;
+    min-width: 0;
+}
+
 /* CorbinOtwell.com Styles */
 
 body {
@@ -53,7 +267,7 @@ h1, h2, h3, h4, p, .home .link-button, .work__details {
     padding: 0;
 }
 
-.resume section, .resume .flex-logo {
+.resume section {
     margin-top: var(--size-9);
 }
 
@@ -64,6 +278,7 @@ h1, h2, h3, h4, p, .home .link-button, .work__details {
 .resume h1 {
     font-size: var(--font-size-5);
     line-height: var(--font-lineheight-3);
+    margin: 0;
 }
 .resume__section-heading { 
     font-size: var(--font-size-3);
@@ -128,7 +343,7 @@ a:focus-visible {
     outline: var(--focus-outline-width) dashed var(--focus-outline-color);
 }
 
-.logo-container__logo {
+.resume .logo-container__logo {
     height: var(--size-8);
     width: var(--size-8);
 }
@@ -229,5 +444,12 @@ a:focus-visible {
     .home {
         max-width: 80ch;
         margin: 0 auto;
+    }
+    .home .logo-container__logo {
+        height: var(--size-10);
+        width: var(--size-10);
+    }
+    .work__details {
+        flex-direction: column;
     }
 }
