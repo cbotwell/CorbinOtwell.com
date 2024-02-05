@@ -267,6 +267,10 @@ h1, h2, h3, h4, p, .home .link-button, .work__details {
     padding: 0;
 }
 
+.about-me .footer {
+    font-size: var(--font-size-3);
+}
+
 .resume section {
     margin-top: var(--size-9);
 }
